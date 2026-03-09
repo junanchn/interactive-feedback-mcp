@@ -21,7 +21,7 @@ Cursor charges per request. Without this tool, each round of feedback requires a
 
 ### 1. Download
 
-Download the latest release from [Releases](https://github.com/panyuQ/interactive-feedback-mcp/releases). You'll get two files:
+Download the latest release from [Releases](https://github.com/junanchn/interactive-feedback-mcp/releases). You'll get two files:
 
 - `feedback_server.exe` — the MCP server
 - `feedback_gui.exe` — the GUI window
