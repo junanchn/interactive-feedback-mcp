@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "interactive-feedback-mcp": {
+      "command": "C:\\interactive-feedback-mcp\\feedback-server.exe",
+      "args": [],
+      "timeout": 6000,
+      "autoApprove": [
+        "interactive-feedback"
+      ]
+    }
+  }
+}

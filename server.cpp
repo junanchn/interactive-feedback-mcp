@@ -242,7 +242,7 @@ static bool launch_gui(const std::string& summary)
     std::error_code ec;
     fs::remove(g.temp_file, ec);
 
-    fs::path gui = g.exe_dir / "feedback_gui.exe";
+    fs::path gui = g.exe_dir / "feedback-gui.exe";
     std::wstring cmd = L"\"" + gui.wstring() + L"\" "
                      + escape_arg(summary) + L" "
                      + escape_arg(g.temp_file.u8string());

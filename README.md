@@ -23,8 +23,8 @@ Cursor charges per request. Without this tool, each round of feedback requires a
 
 Download the latest release from [Releases](https://github.com/junanchn/interactive-feedback-mcp/releases). You'll get two files:
 
-- `feedback_server.exe` — the MCP server
-- `feedback_gui.exe` — the GUI window
+- `feedback-server.exe` — the MCP server
+- `feedback-gui.exe` — the GUI window
 
 Place them in the same folder (e.g. `C:\Tools\interactive-feedback-mcp\`).
 
@@ -38,7 +38,7 @@ Open Cursor Settings → MCP → Add a new MCP server, or manually edit your `mc
 {
   "mcpServers": {
     "interactive-feedback-mcp": {
-      "command": "C:\\path\\to\\feedback_server.exe",
+      "command": "C:\\path\\to\\feedback-server.exe",
       "timeout": 600,
       "autoApprove": ["interactive_feedback"]
     }
@@ -72,7 +72,7 @@ Start a chat. After the AI responds, a feedback window pops up with the AI's wor
 
 1. AI calls `interactive_feedback` with a work summary.
 2. If there's an auto-reply rule with timeout `0`, the server returns it immediately — no GUI.
-3. Otherwise, the server launches `feedback_gui.exe`, passing the summary via command-line arguments. The GUI shows the summary (read-only) and a text input box, always on top.
+3. Otherwise, the server launches `feedback-gui.exe`, passing the summary via command-line arguments. The GUI shows the summary (read-only) and a text input box, always on top.
 4. The server waits for one of three events:
    - **User submits** — GUI writes feedback to a temp file and exits. The server reads it and returns the feedback to the AI. Non-empty feedback resets the auto-reply loop index.
    - **Auto-reply timeout** — the auto-reply text is returned to the AI. The GUI window is handled as described in [Window Behavior](#window-behavior).
@@ -94,7 +94,7 @@ When you step away, auto-reply rules let the AI session continue without manual 
 
 ### Setup
 
-Place config files in the same folder as `feedback_server.exe`. Format: `timeout_seconds|reply_text` per line. `#` for comments. Files are reloaded from disk on each tool call, so you can edit them anytime with a text editor.
+Place config files in the same folder as `feedback-server.exe`. Format: `timeout_seconds|reply_text` per line. `#` for comments. Files are reloaded from disk on each tool call, so you can edit them anytime with a text editor.
 
 ### `auto_reply_oneshot.txt`
 
@@ -121,7 +121,7 @@ When `timeout_seconds` is `0`, the auto-reply fires immediately and the GUI is n
 ## Architecture
 
 ```
-Cursor  ←— stdio JSON-RPC —→  feedback_server.exe  ←— args / temp file —→  feedback_gui.exe
+Cursor  ←— stdio JSON-RPC —→  feedback-server.exe  ←— args / temp file —→  feedback-gui.exe
                                                     ←— Win32 messages ——→
 ```
 
@@ -135,7 +135,7 @@ C++17, CMake 3.10+. Only dependency is nlohmann/json (bundled as `json.hpp`).
 mkdir build && cd build && cmake .. && cmake --build .
 ```
 
-Output: `build/bin/feedback_server.exe` and `build/bin/feedback_gui.exe`.
+Output: `build/bin/feedback-server.exe` and `build/bin/feedback-gui.exe`.
 
 ## License
 

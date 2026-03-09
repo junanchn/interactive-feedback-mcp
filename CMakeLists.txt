@@ -9,19 +9,19 @@ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 add_compile_options(/utf-8)
 
-add_executable(feedback_server server.cpp)
-add_executable(feedback_gui gui.cpp)
+add_executable(feedback-server server.cpp)
+add_executable(feedback-gui gui.cpp)
 
-target_compile_definitions(feedback_server PRIVATE
+target_compile_definitions(feedback-server PRIVATE
     UNICODE _UNICODE WIN32_LEAN_AND_MEAN NOMINMAX)
-target_compile_definitions(feedback_gui PRIVATE
+target_compile_definitions(feedback-gui PRIVATE
     UNICODE _UNICODE WIN32_LEAN_AND_MEAN NOMINMAX)
 
-set_target_properties(feedback_gui PROPERTIES WIN32_EXECUTABLE TRUE)
-target_link_libraries(feedback_gui PRIVATE user32 gdi32 shell32 comctl32)
+set_target_properties(feedback-gui PROPERTIES WIN32_EXECUTABLE TRUE)
+target_link_libraries(feedback-gui PRIVATE user32 gdi32 shell32 comctl32)
 
 # 启用 ComCtl32 v6 视觉样式
-target_link_options(feedback_gui PRIVATE
+target_link_options(feedback-gui PRIVATE
     "/MANIFESTDEPENDENCY:type='win32' \
 name='Microsoft.Windows.Common-Controls' \
 version='6.0.0.0' \
