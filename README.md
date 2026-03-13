@@ -26,7 +26,7 @@ Download the latest release from [Releases](https://github.com/junanchn/interact
 - `feedback-server.exe` — the MCP server
 - `feedback-gui.exe` — the GUI window
 
-Place them in the same folder (e.g. `C:\Tools\interactive-feedback-mcp\`).
+Place them in the same folder (e.g. `C:\interactive-feedback-mcp\`).
 
 ### 2. Configure MCP
 
