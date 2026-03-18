@@ -18,8 +18,10 @@ from interactive_feedback_mcp.ui import STATUS_ACTIVE, STATUS_CANCELLED, STATUS_
 mcp = FastMCP(
     name="interactive-feedback-mcp-mac",
     instructions=(
-        "Use the interactive_feedback tool whenever you need direct user input "
-        "before continuing work in the same request."
+        "MANDATORY: You MUST call the interactive_feedback tool at the END of EVERY response, "
+        "with NO exceptions. NEVER end your turn by simply outputting text — always finish by "
+        "calling interactive_feedback to collect the user's next instruction via the popup window. "
+        "This replaces the normal chat input flow entirely."
     ),
 )
 
