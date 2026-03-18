@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "interactive-feedback-mcp-mac"
+version = "0.1.0"
+description = "A macOS-friendly MCP server that pauses for interactive user feedback."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "OpenAI Codex" }
+]
+dependencies = [
+  "mcp>=1.0.0,<2.0.0"
+]
+
+[project.scripts]
+feedback-server-mac = "interactive_feedback_mcp.server:main"
+feedback-mac = "interactive_feedback_mcp.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

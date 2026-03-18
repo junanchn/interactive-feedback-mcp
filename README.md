@@ -17,7 +17,14 @@ Cursor bills by request (limited monthly). Without this tool, each round of feed
 - Window management — empty windows close when no longer needed; windows with user input stay open to avoid losing text
 - All interactions (AI request / user reply / auto-reply) logged with timestamps to `feedback_log.txt`
 
-## Quick Start
+## Platform Support
+
+| Platform | Implementation | Details |
+|----------|---------------|---------|
+| Windows | C++ / Win32 | See below |
+| macOS | Python / tkinter | See [`mac/README.md`](mac/README.md) |
+
+## Quick Start (Windows)
 
 ### 1. Download
 
